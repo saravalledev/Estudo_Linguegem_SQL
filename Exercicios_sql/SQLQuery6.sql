@@ -1,3 +1,5 @@
+/*Esse script SQL cria três visualizações (views) a partir de uma tabela chamada cliente com base em diferentes critérios de valor de limitecredito.*/
+
 create view vmPlatinum as
 Select *
 From cliente
