@@ -1,3 +1,7 @@
+/*Em resumo, o script cria e alimenta tabelas de cliente e tipo de cliente, faz consultas que utilizam chaves 
+estrangeiras e junções entre as tabelas, e cria uma visualização que simplifica a consulta combinada de informações 
+do cliente com o tipo de cliente.*/
+
 IF EXISTS (SELECT * FROM sys.objects
 WHERE object_id =OBJECT_ID(N'[dbo].[ClienteTipo]')
 AND type in (N'U'))
@@ -9,7 +13,7 @@ descricao varchar(20) not null
 )
 
 insert into clientetipo (descricao) values ('COMERCIO')
-insert into clientetipo (descricao) values ('SERVI�O')
+insert into clientetipo (descricao) values ('SERVIÇO')
 insert into clientetipo (descricao) values ('OUTROS')
 
 SELECT * FROM clientetipo
@@ -37,7 +41,7 @@ values
 
 SELECT * FROM Cliente
 
---Erro "restri��o do FOREIGN KEY" for�ado
+--Erro "restrição do FOREIGN KEY" forçado
 insert into cliente (fantasia, limitecredito,chTipo)
 values ('Mercado Livre', 20000,6)
 --------------------------------------------
